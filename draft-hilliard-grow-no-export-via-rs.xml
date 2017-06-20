@@ -127,8 +127,9 @@
         route server client announces a prefix tagged with NO_EXPORT_VIA_RS
         to a route server, the route server MUST attach the <xref
         target="RFC1997" /> NO_EXPORT community to all outbound
-        announcements of that prefix.  The route server SHOULD NOT strip the
-        NO_EXPORT_VIA_RS community from the outbound prefix announcement.
+        announcements of that prefix to other route server clients.  The
+        route server SHOULD strip the NO_EXPORT_VIA_RS community from
+        the outbound prefix announcement.
 
       </t>
 
@@ -136,8 +137,9 @@
 
         If a route server client announces a prefix tagged with both the
         NO_EXPORT and NO_EXPORT_VIA_RS communities to a route server, the
-        route server MUST ignore the NO_EXPORT community and MUST propagate
-        the prefix as specified in the previous paragraph.
+        route server MUST ignore the NO_EXPORT community, and otherwise MUST
+        handle the prefix and its attributes as specified in the previous
+        paragraph.
         
       </t>
 
@@ -146,8 +148,8 @@
         If a BGP speaker which is not a route server receives a prefix
         tagged with NO_EXPORT_VIA_RS from a BGP peer, the BGP speaker MUST
         ignore the NO_EXPORT_VIA_RS community, MUST NOT treat the UPDATE as
-        an error according to <xref target="RFC7606" /> and SHOULD NOT
-        remove the community from the prefix.
+        an error according to <xref target="RFC7606" /> and SHOULD strip the
+        NO_EXPORT_VIA_RS community from the prefix.
 
         <!--
 
