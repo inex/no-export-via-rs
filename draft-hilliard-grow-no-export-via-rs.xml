@@ -10,7 +10,7 @@
 <?rfc inline="yes"?>
 <?rfc compact="yes"?>
 <?rfc subcompact="no"?>
-<rfc category="std" docName="draft-hilliard-grow-no-export-via-rs-01" ipr="trust200902" updates="1997, 7947">
+<rfc category="std" docName="draft-hilliard-grow-no-export-via-rs-00" ipr="trust200902" updates="1997, 7947">
   <front>
     <title abbrev="BGP Large Communities">The BGP NO_EXPORT_VIA_RS Community for Route Servers</title>
 
