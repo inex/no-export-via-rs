@@ -148,7 +148,7 @@
 
       <t>
 
-        If a BGP speaker which is not a route server receives a prefix
+        If a BGP speaker that is not a route server receives a prefix
         tagged with NO_EXPORT_VIA_RS from a BGP peer, the BGP speaker MUST
         ignore the NO_EXPORT_VIA_RS community, MUST NOT treat the UPDATE as
         an error according to <xref target="RFC7606" /> and SHOULD strip the
