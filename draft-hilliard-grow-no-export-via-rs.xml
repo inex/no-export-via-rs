@@ -15,14 +15,14 @@
   <front>
     <title abbrev="BGP Large Communities">The BGP NO_EXPORT_VIA_RS Community for Route Servers</title>
 
-    <author initials="N" surname="Hilliard" fullname="Nick Hilliard" role="editor">
-      <organization>INEX</organization>
+    <author initials="N" surname="Hilliard" fullname="Nick Hilliard">
+      <organization abbrev="INEX">Internet Neutral Exchange Association CLG</organization>
       <address>
         <postal>
           <street>4027 Kingswood Road</street>
           <city>Dublin</city>
           <code>24</code>
-          <country>IE</country>
+          <country>Ireland</country>
         </postal>
         <email>nick@inex.ie</email>
       </address>
@@ -30,7 +30,7 @@
 
     <date/>
 
-    <area>Operations and Management</area>
+    <area>Operations &amp; Management Area</area>
     <workgroup>GROW</workgroup>
     <keyword>BGP</keyword>
     <keyword>communities</keyword>
