@@ -181,12 +181,33 @@
         statements.  For example, this can be handled in BIRD syntax using
         the following code:
 
+<!--
+
+Needs work:
+- define "pair" variables for noexport and noexportviars
+- check "interpret communities" switch
+- this function needs to be split into two filters, one for ingress
+  filtering (f_import_fvliid_autsys) and the other for egress (new export
+  filter in protocol bgp pb_fvliid_autsys).
+
+- ref: https://github.com/inex/IXP-Manager/blob/master/resources/views/api/v4/router/server/bird/neighbors.foil.php
+
+-->
+
 <figure align="center"><artwork><![CDATA[
 
 filter f_rs_client
 {
-    if (65535, 65281) ~ bgp_community then
-        bgp_community.add((65535, 65285));
+    // strip NO_EXPORT
+    if (65535, 65281) ~ bgp_community then {
+        bgp_community.delete((65535, 65281));
+    }
+
+    // add NO_EXPORT outbound; remove NO_EXPORT_VIA_RS outbound
+    if (65535, 65285) ~ bgp_community then {
+        bgp_community.add((65535, 65281));
+        bgp_community.delete((65535, 65282));
+    }
 
     accept;
 }
