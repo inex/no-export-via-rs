@@ -84,26 +84,28 @@
 
         Some Internet Exchange route server operators ignored the strict
         interpretation of <xref target="RFC1997" /> on this point because
-        although it was technically more correct to interpret the NO_EXPORT
-        community on the route server, the point of a route server was to
-        act as a broker rather than a router, and it was argued that it was
-        more useful for route server clients if prefixes tagged with the
-        NO_EXPORT community were passed unaltered through the route server
-        rather than being blocked.  This approach gave route server clients
-        the flexibility of being able to use the NO_EXPORT community to
-        signal adjacent ASNs, even if this behaviour was not technically
+        although it is technically more correct to interpret the NO_EXPORT
+        community on the route server, the point of a route server is to act
+        as a broker rather than a router.  Consequently it has been argued
+        that it is more useful for route server clients if prefixes tagged
+        with the NO_EXPORT community are passed unaltered through the route
+        server rather than being blocked.  This approach gives route server
+        clients the flexibility of being able to use the NO_EXPORT community
+        to signal adjacent ASNs, even if this behaviour is not technically
         correct according to <xref target="RFC1997" />.
 
       </t>
       <t>
 
-        As there was no consensus among IXP route server operators about
-        which was the more appropriate behaviour, the Internet Exchange
-        Route Server <xref target="RFC7947" /> specification document stayed
-        quiet on the issue, noting only in Section 2.2.4 that a route server
-        may interpret, modify or remove specific BGP communities, as defined
-        by local policy.  This formally allowed the practice of treating the
-        NO_EXPORT community as a transparent transitive attribute.
+        As there is no consensus among IXP route server operators about
+        which is the more appropriate behaviour, the Internet Exchange Route
+        Server <xref target="RFC7947" /> specification document stayed quiet
+        on the issue, noting only in Section 2.2.4 that a route server may
+        interpret, modify or remove specific BGP communities, as defined by
+        local policy.  This formally allowed the practice of treating the
+        NO_EXPORT community as a transparent transitive attribute, but did
+        not define whether NO_EXPORT should be interpreted or passed through
+        the route server.
 
       </t>
       <t>
