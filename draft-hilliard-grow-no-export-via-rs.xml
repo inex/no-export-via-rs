@@ -129,7 +129,7 @@
       </t>
     </section>
 
-    <section title="The BGP NO_EXPORT_VIA_RS Community">
+    <section title="The BGP NO_EXPORT_VIA_RS Community" anchor="community_definition">
       <t>
 
         The BGP NO_EXPORT_VIA_RS Community is a community interpreted only
@@ -242,12 +242,10 @@ filter f_rs_client
     <section title="Vendor Implementation Recommendations">
       <t>
 
-        <!--
-
-        TODO: vendor semantics should implement the policy specified above
-        so that the route server operator doesn't need to do so.
-
-        -->
+        Route server implementations MUST provide a configuration switch to
+        implement the behaviour specified in <xref
+        target="community_definition" />.  This configuration switch SHOULD
+        be enabled by default.
 
       </t>
     </section>
