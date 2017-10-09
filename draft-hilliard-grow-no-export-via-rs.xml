@@ -110,6 +110,13 @@
       </t>
       <t>
 
+        This allowed an operational ambiguity to continue, namely that there
+        was no consistent way for a route server client to limit propagation
+        of any prefixes announced to a route server.
+
+      </t>
+      <t>
+
         This document resolves this ambiguity by creating a new BGP
         Well-Known Community called NO_EXPORT_VIA_RS, which allows BGP route
         server clients to instruct an Internet Exchange BGP Route Server to
@@ -178,8 +185,12 @@
 
         It is possible to implement the semantics described above in many
         BGP implementations by using standard BGP policy language
-        statements.  For example, this can be handled in BIRD syntax using
+        statements.
+
+<!--
+        For example, this can be handled in BIRD syntax using
         the following code:
+-->
 
 <!--
 
@@ -194,6 +205,7 @@ Needs work:
 
 -->
 
+<!--
 <figure align="center"><artwork><![CDATA[
 
 filter f_rs_client
@@ -214,6 +226,7 @@ filter f_rs_client
 
 ]]></artwork></figure>
 
+-->
         <!--
 
         TODO: note sure if it's advisable to provide actual code here,
